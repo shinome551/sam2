@@ -11,7 +11,7 @@ ENV GUNICORN_PORT=5000
 # SAM 2 environment variables
 ENV APP_ROOT=/opt/sam2
 ENV PYTHONUNBUFFERED=1
-ENV SAM2_BUILD_CUDA=0
+ENV SAM2_BUILD_CUDA=1
 ENV MODEL_SIZE=${MODEL_SIZE}
 
 # Install system requirements
@@ -32,7 +32,8 @@ RUN pip install --upgrade pip setuptools
 RUN pip install -e ".[interactive-demo]"
 
 # https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite/issues/69#issuecomment-1826764707
-RUN rm /opt/conda/bin/ffmpeg && ln -s /bin/ffmpeg /opt/conda/bin/ffmpeg
+# RUN rm /opt/conda/bin/ffmpeg && ln -s /bin/ffmpeg /opt/conda/bin/ffmpeg
+RUN ln -s /bin/ffmpeg /opt/conda/bin/ffmpeg
 
 # Make app directory. This directory will host all files required for the
 # backend and SAM 2 inference files.

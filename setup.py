@@ -38,6 +38,11 @@ EXTRA_PACKAGES = {
         "opencv-python>=4.7.0",
         "eva-decord>=0.6.1",
     ],
+    "fastapi": [
+        "fastapi>=0.116.0",
+        "python-multipart>=0.0.20",
+        "uvicorn>=0.35.0",
+    ],
     "interactive-demo": [
         "Flask>=3.0.3",
         "Flask-Cors>=5.0.0",
